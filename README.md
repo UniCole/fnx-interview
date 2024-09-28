@@ -7,6 +7,7 @@ This project demonstrates interaction with AWS services such as **S3**, **Lambda
 - Ensuring the API is not publicly accessible.
 
 ## Project Structure
+```
 fnx-backend-test/
 ├── data/
 │   └── FnxTaskApi-dev-swagger-apigateway.json
@@ -20,7 +21,7 @@ fnx-backend-test/
 │   └── index.js
 ├── README.md
 └── package.json
-
+```
 
 ## Prerequisites
 - Node.js (version 14 or higher)
