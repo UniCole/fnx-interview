@@ -124,6 +124,37 @@ Retrieves the JSON file from the S3 bucket.
         -d '{"name": "John Doe", "email": "johndoe@example.com", "message": "Hello!"}' \
         -H 'Authorization: AWS4-HMAC-SHA256 Credential=YOUR_AWS_ACCESS_KEY_ID/...'
      ```
+- **Verified Responses:**
+   - Successful requests return a 200 status code with the expected message and data.
+   - Invalid requests return appropriate error messages.
+
+## Logging
+- **Lambda Logs:**
+   - Accessible in AWS CloudWatch under the Lambda function's log group.
+   - Used for debugging and monitoring function executions.
+- **API Gateway Logs:**
+   - Enabled logging in API Gateway stages.
+   - Useful for tracing API calls and diagnosing issues.
+
+## Conclusion
+Successfully completed the following:
+- Uploaded and retrieved files from S3 securely.
+- Generated a pre-signed URL for temporary access to S3 objects.
+- Set up an AWS API Gateway endpoint linked to a Lambda function.
+- Ensured the API is secured and not publicly accessible.
+- Tested the API to confirm it behaves as expected.
+
+___
+**Thank you for reviewing this project!**
+If you have any questions or need further information, please feel free to contact me.
+
+
+
+
+
+
+
+
 
 
 
