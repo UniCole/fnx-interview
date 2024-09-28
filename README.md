@@ -1,4 +1,4 @@
-# FNX Backend Developer Test
+# Backend Developer Test
 ## Introduction
 This project demonstrates interaction with AWS services such as **S3**, **Lambda**, and **API Gateway** using Node.js. The main objectives were:
 - Uploading and retrieving files from S3.
