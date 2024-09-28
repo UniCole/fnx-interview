@@ -1,12 +1,8 @@
-# fnx-interview
-## Task 1 - Done
+# FNX Backend Developer Test
+## Introduction
+This project demonstrates interaction with AWS services such as **S3**, **Lambda**, and **API Gateway** using Node.js. The main objectives were:
+“*”Uploading and retrieving files from S3.
+“*”Generating a pre-signed URL for secure access.
+“*”Setting up an API endpoint with AWS API Gateway and Lambda.
+“*”Ensuring the API is not publicly accessible.
 
-1. Created an s3 bucket
-2. Created a github repo to store the code
-3. Installed dependencies and created an upload script
-4. Created an AWS user, role and polices to assume it
-5. Created a Get sctript for the uploaded file
-
-## Task 2 - WIP
-
-1. Create a Swagger file
