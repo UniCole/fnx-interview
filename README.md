@@ -145,6 +145,7 @@ Successfully completed the following:
 - Tested the API to confirm it behaves as expected.
 
 ___
+
 **Thank you for reviewing this project!**
 If you have any questions or need further information, please feel free to contact me.
 
