@@ -4,7 +4,11 @@ exports.handler = async (event) => {
     let requestBody;
     try {
         if (event.body) {
-            requestBody = JSON.parse(event.body);
+            if (typeof event.body === 'string') {
+                requestBody = JSON.parse(event.body);
+            } else {
+                requestBody = event.body;
+            }
         } else {
             console.error('event.body is undefined');
             return {
@@ -19,7 +23,6 @@ exports.handler = async (event) => {
             body: JSON.stringify({ message: 'Invalid request body: cannot parse JSON' }),
         };
     }
-
 
     const response = {
         statusCode: 200,
