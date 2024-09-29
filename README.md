@@ -41,7 +41,14 @@ Upload a Swagger file to S3, import it into API Gateway, and create a POST metho
 
 ___
 
-
+## Cloud Resources
+All cloud resources for this task were created in my personal AWS account and include the following:
+- **IAM Roles.**
+- **S3 Bucket.**
+- **API Gateway.**
+- **Lambda Function.**
+  
+### These resources can be demonstrated during an online meeting upon request.
 
 
 
