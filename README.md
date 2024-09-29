@@ -35,9 +35,9 @@ Upload a Swagger file to S3, import it into API Gateway, and create a POST metho
 
 ### Work done:
 1. Created a Swagger file configuration for the API gateway with Swagger Editor.
-2. Uploaded the Swagger configuration file to S3 using the script from exercise 1.
+2. Uploaded the Swagger configuration file to S3 using the script from exercise 1. (replaced the sample json file with the Swagger configuration).
 3. Imported the Swagger configuration into API Gateway from S3.
-4. Created a Lambda function to process POST requests coming through API Gateway.
+4. Created a Lambda function to process POST requests coming through API Gateway. (The Lambda function code is attached in the repo: `/Lambda/index.js`).
 5. Linked API Gateway POST Method to Lambda Function.
 6. Deployed the API in API Gateway and tested the POST method by sending requests via Postman. (Postman collection file is attached in the repo).
 
