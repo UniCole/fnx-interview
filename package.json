@@ -1,5 +1,10 @@
 {
+  "name": "fnx-backend-test",
+  "version": "1.0.0",
+  "description": "Backend Developer Test",
   "dependencies": {
     "aws-sdk": "^2.1691.0"
-  }
+  },
+  "author": "UniCole",
+  "license": "ISC"
 }

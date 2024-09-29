@@ -1,22 +1,19 @@
 const AWS = require('aws-sdk');
 const logger = require('../logger/logger');
 
-// STS client for assuming the role
 const sts = new AWS.STS();
 
 const roleParams = {
-    RoleArn: 'arn:aws:iam::440413135436:role/MyS3Role', // Your IAM role ARN
-    RoleSessionName: 'MyS3DownloadSession' // A unique session name for tracking
+    RoleArn: 'arn:aws:iam::440413135436:role/MyS3Role', 
+    RoleSessionName: 'MyS3DownloadSession' 
 };
 
-// Assume the role
 sts.assumeRole(roleParams, async (err, data) => {
     if (err) {
         logger.logError("Error assuming IAM role", err);
         return;
     }
 
-    // Use the temporary credentials to create an S3 client
     const s3 = new AWS.S3({
         accessKeyId: data.Credentials.AccessKeyId,
         secretAccessKey: data.Credentials.SecretAccessKey,
@@ -30,7 +27,6 @@ sts.assumeRole(roleParams, async (err, data) => {
         };
 
         try {
-            // Fetch file content
             const data = await s3.getObject(params).promise();
             const fileContent = data.Body.toString('utf-8');
             logger.logActivity("File content fetched successfully");
@@ -46,7 +42,6 @@ sts.assumeRole(roleParams, async (err, data) => {
         }
     };
 
-    // Call the function to fetch the file
     getFile();
 });
 

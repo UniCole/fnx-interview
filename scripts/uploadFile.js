@@ -3,23 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../logger/logger');
 
-// Set up the STS client for assuming an IAM role
 const sts = new AWS.STS();
 
-// Define the parameters for assuming the role
 const roleParams = {
-    RoleArn: 'arn:aws:iam::440413135436:role/MyS3Role', // Replace with your IAM role ARN
-    RoleSessionName: 'MyS3UploadSession' // A unique identifier for the session
+    RoleArn: 'arn:aws:iam::440413135436:role/MyS3Role', 
+    RoleSessionName: 'MyS3UploadSession' 
 };
 
-// Assume the role
 sts.assumeRole(roleParams, (err, data) => {
     if (err) {
         logger.logError("Error assuming IAM role", err);
         return;
     }
 
-    // Use the temporary credentials
     const s3 = new AWS.S3({
         accessKeyId: data.Credentials.AccessKeyId,
         secretAccessKey: data.Credentials.SecretAccessKey,
@@ -27,9 +23,7 @@ sts.assumeRole(roleParams, (err, data) => {
     });
 
     const uploadFile = () => {
-        const filePath = path.join(__dirname, '../data/data.json');
-
-        // Check if file exists before proceeding
+        const filePath = path.join(__dirname, '../data/swagger-api.json');
         if (!fs.existsSync(filePath)) {
             logger.logError("Error: Local file not found", filePath);
             return;
@@ -44,7 +38,6 @@ sts.assumeRole(roleParams, (err, data) => {
             ContentType: "application/json"
         };
 
-        // Upload the file to S3 using the temporary credentials
         s3.upload(params, function (err, data) {
             if (err) {
                 if (err.code === 'NoSuchBucket') {
@@ -60,6 +53,5 @@ sts.assumeRole(roleParams, (err, data) => {
         });
     };
 
-    // Call the upload function after successfully assuming the role
     uploadFile();
 });
