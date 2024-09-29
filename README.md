@@ -18,6 +18,7 @@ Upload a JSON file to an S3 bucket and retrieve its content using JavaScript.
 4. Created an AWS user, role and polices to assume it.
 5. Created a Get sctript for the uploaded file.
 
+___
 
 ## Exercise 2: Uploading Swagger to S3 and Importing to API Gateway
 
